@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
-      <h3 class="title">vue-admin-template</h3>
+      <h3 class="title">vue-element-template-pc</h3>
       <el-form-item prop="username">
         <span class="svg-container">
           <svg-icon icon-class="user" />
@@ -24,8 +24,8 @@
         </span>
       </el-form-item>
       <el-form-item>
-        <el-button :loading="loading" type="primary" style="width:100%;" @click.native.prevent="handleLogin">
-          Sign in
+        <el-button :loading="loading" plain class="login-button" @click.native.prevent="handleLogin">
+          登录
         </el-button>
       </el-form-item>
       <div class="tips">
@@ -132,16 +132,16 @@ $light_gray:#eee;
   }
   .el-form-item {
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
-    color: #454545;
+    color: #fff;
   }
 }
 
 </style>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-$bg:#2d3a4b;
+$bg:#75A4B9;
 $dark_gray:#889aa4;
 $light_gray:#eee;
 .login-container {
@@ -157,6 +157,14 @@ $light_gray:#eee;
     max-width: 100%;
     padding: 35px 35px 15px 35px;
     margin: 120px auto;
+    .login-button {
+      width:100%;
+      color: #75A4B9;
+    }
+    .el-button.is-plain:focus, .el-button.is-plain:hover {
+      background: #fff;
+      border-color: #eee;
+    }
   }
   .tips {
     font-size: 14px;
@@ -170,7 +178,7 @@ $light_gray:#eee;
   }
   .svg-container {
     padding: 6px 5px 6px 15px;
-    color: $dark_gray;
+    color: $light_gray;
     vertical-align: middle;
     width: 30px;
     display: inline-block;
@@ -178,7 +186,7 @@ $light_gray:#eee;
   .title {
     font-size: 26px;
     font-weight: 400;
-    color: $light_gray;
+    color: #fff;
     margin: 0px auto 40px auto;
     text-align: center;
     font-weight: bold;
@@ -188,7 +196,7 @@ $light_gray:#eee;
     right: 10px;
     top: 7px;
     font-size: 16px;
-    color: $dark_gray;
+    color: $light_gray;
     cursor: pointer;
     user-select: none;
   }
