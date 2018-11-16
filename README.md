@@ -43,6 +43,7 @@ npm run build --report
 │   ├── styles                 // 全局样式
 │   ├── utils                  // 全局公用方法
 │       ├── filter             // 全局 filter
+│       ├── globalMap          // 全局数据配置
 │   ├── views                  // view
 │   ├── App.vue                // 入口页面
 │   ├── main.js                // 入口 加载组件 初始化等
