@@ -36,6 +36,18 @@ export function fixNumber(value, num = 2) {
   parseFloat(value).toFixed(num)
 }
 
+// 数字百分比格式化
+export function toPercent(point) {
+  let str = ''
+  if (typeof point === 'number') {
+    str = Number(point * 100).toFixed(2)
+    str += '%'
+  } else {
+    str = (point === undefined || point === null) ? '-' : point
+  }
+  return str
+}
+
 // 金额格式化
 export function formatCurrency(value, symbol = '￥', num = 2) {
   if (!value) value = 0

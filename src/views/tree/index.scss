@@ -1,0 +1,31 @@
+.app-container {
+  .left-panel {
+    width: 35%;
+    float: left;
+  }
+  .right-panel {
+    width: 60%;
+    min-height: 100px;
+    float: left;
+    margin-left: 2%;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+    padding: 0px 10px;
+    color: #333;
+    font-size: 15px;
+    line-height: 23px;
+    max-height: calc(100vh - 100px);
+    overflow: auto;
+    a {
+      text-decoration: underline;
+      color: #68a5bb;
+    }
+    .note {
+      color: #0c883b;
+      font-family: inherit;
+      font-size: 13px;
+      line-height: 20px;
+      overflow: auto;
+    }
+  }
+}

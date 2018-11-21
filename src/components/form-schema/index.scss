@@ -1,0 +1,29 @@
+.template-index {
+  width: 100%;
+  background: #fff;
+  .form {
+    float: left;
+    width: 67%;
+    height: 100%;
+    padding: 10px;
+    overflow: auto;
+  }
+  .form-detial {
+    float: left;
+    width: 33%;
+    color: #333;
+    .form-model {
+      height: 30vh;
+      overflow: auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px
+    }
+    .form-list {
+      height: 50vh;
+      overflow: auto;
+      border: 1px solid #ddd;
+      padding: 10px
+    }
+  }
+}

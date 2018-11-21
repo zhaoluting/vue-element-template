@@ -1,22 +1,7 @@
-<template>
-  <div class="app-container">
-    <el-input v-model="filterText" placeholder="Filter keyword" style="margin-bottom:30px;" />
-
-    <el-tree
-      ref="tree2"
-      :data="data2"
-      :props="defaultProps"
-      :filter-node-method="filterNode"
-      class="filter-tree"
-      default-expand-all
-    />
-
-  </div>
-</template>
-
+<template src="./index.html"/>
+<style lang="scss" src="./index.scss"></style>
 <script>
 export default {
-
   data() {
     return {
       filterText: '',
@@ -43,16 +28,6 @@ export default {
         }, {
           id: 6,
           label: 'Level two 2-2'
-        }]
-      }, {
-        id: 3,
-        label: 'Level one 3',
-        children: [{
-          id: 7,
-          label: 'Level two 3-1'
-        }, {
-          id: 8,
-          label: 'Level two 3-2'
         }]
       }],
       defaultProps: {

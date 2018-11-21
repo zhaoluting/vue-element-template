@@ -1,0 +1,52 @@
+
+<div class="app-container">
+  <div class="left-panel">
+    <el-input v-model="filterText" placeholder="Filter keyword" style="margin-bottom:30px;" />
+    <el-tree
+      ref="tree2"
+      :data="data2"
+      :props="defaultProps"
+      :filter-node-method="filterNode"
+      class="filter-tree"
+      default-expand-all
+    />
+  </div>
+  <div class="right-panel">
+    <p>目录树在一些系统中是比较重要的，我在两个后台系统中写过比较复杂的目录树，
+      一个应用在类似网盘的素材管理库，一个应用在调度任务管理界面。我抽出了一些比较通用的函数，
+      由于右键功能这些偏向界面的和业务相关性比较强，我就不抽出来了。</p>
+
+    <p>代码相关解释如下，<a href="https://github.com/zhaoluting/vue-element-template-pc/blob/master/src/views/tree/tree.vue" target="_blank">点击查看代码</a></p>
+    <pre class="note">
+  每个子集的必要属性
+    - autoId：唯一标识符，要在每个元素上加上该ID
+    - icon：'folder'或者'file'，用于判断是文件夹还是文件
+    - depth：当前层级，从0开始计算
+    - hierarchy：从顶层到当前元素的autoId数组，可以方便的知道父级autoId
+    - index：从顶层到当前元素的索引数组，可以方便得通过localtionMenu找到相应元素
+    - expand：当前目录是否展开
+    - children：目录的子集
+    - name：显示的名称
+
+  函数集合：
+    - (setMenus)初始化目录 （第一次加载）
+    - (setMenuSelectKey)选中目录树（界面操作）
+    - (openNextDepth)传入父级，获得目录子集（界面操作）
+    - (findFile)从非目录树处获取文件信息，并搜索展示文件，若当前目录树中没有，则一层一层往上添加目录找
+    - (reloadMenu)刷新整个目录树（界面操作）
+    - (moveFile)移动文件或文件夹（界面操作）
+    - (deleteFile)本地删除某个目录（只能为空）或 文件  （界面操作）
+    - (addFile)添加某个文件（界面操作）
+    - (renameFolder)更新文件夹，传入文件夹更新后的信息
+    - (searchFile)搜索文件，在当前目录树中搜索已加载的文件或文件夹
+    - (localtionMenu)定位目录树，传入索引
+    - (scrollToMenu)使选中文件滚动到屏幕可见范围，传入文件key（需要在每个元素节点加入ID）
+    - (getNewMenu)刷新目录树，传入旧目录树，保留原目录树展开状态
+    - (refreshFolder)只刷新一级文件夹，传入父级ID（做到无感知）
+    - (initMenus)初始化目录树(只获得一级目录)
+    - (getNextDepth)通过父级获得子目录
+    - (addStateFolder)添加某个文件夹，若文件夹未在当前目录加载出来，则不断往父级搜索
+    - (addStateFile)添加某个文件，若文件未在当前目录加载出来，则不断往父级搜索
+    </pre>
+  </div>
+</div>
