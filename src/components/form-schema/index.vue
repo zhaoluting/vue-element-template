@@ -23,6 +23,7 @@ export default {
         'el-form',
         'el-input',
         'el-input-number',
+        'el-time-select',
         'el-date-picker',
         'el-time-picker',
         'el-cascader',

@@ -29,6 +29,7 @@ export const formJson = {
     inputTagValue: ['tags'],
     inputValue: 'ddd',
     inputNumberValue: 11,
+    timeSelectValue: '',
     datePickerValue: '',
     timePickerValue: '',
     cascaderValue: ['jiangsu', 'nanjing'],
@@ -56,7 +57,6 @@ export const formJson = {
     },
     attribute: {
       placeholder: '输入框',
-      size: 'default',
       clearable: true,
       maxlength: 10
     }
@@ -69,6 +69,19 @@ export const formJson = {
     attribute: {
       max: 100,
       min: 10
+    }
+  }, {
+    type: 'el-time-select',
+    formAttrs: {
+      label: '固定时间点',
+      prop: 'timeSelectValue'
+    },
+    attribute: {
+      pickerOptions: {
+        start: '08:30',
+        step: '00:15',
+        end: '18:30'
+      }
     }
   }, {
     type: 'el-date-picker',

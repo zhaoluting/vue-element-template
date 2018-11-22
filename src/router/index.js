@@ -62,6 +62,12 @@ export const constantRouterMap = [
         name: 'Form',
         component: () => import('@/views/form/index'),
         meta: { title: 'schema表单', icon: 'form' }
+      },
+      {
+        path: 'code',
+        name: 'Code',
+        component: () => import('@/views/code/index'),
+        meta: { title: '代码编辑器', icon: 'code' }
       }
     ]
   },

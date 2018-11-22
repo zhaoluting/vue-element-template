@@ -76,3 +76,6 @@ a:hover {
 .app-container {
   padding: 20px;
 }
+.CodeMirror-fullscreen {
+  z-index: 2001 !important;
+}

@@ -1,14 +1,18 @@
 .app-container {
+  .common-form .form-icon {
+    width: 25px;
+    height: 38px;
+    cursor: pointer;
+  }
   .left-panel {
-    width: 35%;
+    width: 45%;
     float: left;
   }
   .right-panel {
-    width: 60%;
+    width: 50%;
     min-height: 100px;
     float: left;
     margin-left: 2%;
-    // border: #ddd 1px solid;
     border-radius: 5px;
     padding: 0px 10px;
     color: #555;

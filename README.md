@@ -2,29 +2,29 @@
 
 > PC后台模板，加入了一些自己平时积累下来的实用公共方法与组件。
 
-## 相关项目
+## 参考项目
 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
 
-## Build Setup
+## 相关命令
 
 ```bash
-# Clone project
+# 下载项目
 git clone https://github.com/PanJiaChen/vue-admin-template.git
 
-# Install dependencies
+# 安装依赖
 npm install
 
-# 建议不要用cnpm  安装有各种诡异的bug 可以通过如下操作解决npm速度慢的问题
-npm install --registry=https://registry.npm.taobao.org
-
-# Serve with hot reload at localhost:3000
+# 本地启动项目，开启3000端口，并热更新
 npm run dev
 
-# Build for production with minification
+# 打包输出代码和资源文件
 npm run build
 
-# Build for production and view the bundle analyzer report
+# 生产构建打包并查看分析报告
 npm run build --report
+
+# 使用eslint检测src下代码的规范情况
+npm run lint
 ```
 
 ## 结构
@@ -56,3 +56,24 @@ npm run build --report
 ├── index.html                 // html模板
 └── package.json               // package.json
 
+## 常用插件集合
+### [moment.js - 时间处理](http://momentjs.cn/)
+```
+<!--安装-->
+npm install moment --save
+
+<!--引入-->
+import moment from 'moment';
+
+<!--实例-->
+moment().format('YYYY-MM-DD');
+```
+
+### [vue-codemirror - 代码编辑器](https://www.npmjs.com/package/vue-codemirror)
+基于 Codemirror，适用于 Vue 的 Web 代码编辑器。
+
+- 安装
+```
+npm install vue-codemirror --save
+```
+- [点击查看实例](https://github.com/zhaoluting/vue-element-template-pc/blob/master/src/components/codeMirror/index.vue)
