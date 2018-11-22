@@ -39,6 +39,23 @@ export function handleParams(params) {
   return obj
 }
 
+// 深拷贝
+export function deepClone(parent, children) {
+  const child = children || {}
+  for (const index in parent) {
+    if (!parent.hasOwnProperty(index)) {
+      continue
+    }
+    if (typeof parent[index] === 'object') {
+      child[index] = parent[index].constructor === Array ? [] : {}
+      deepClone(parent[index], child[index])
+    } else {
+      child[index] = parent[index]
+    }
+  }
+  return child
+}
+
 export function parseTime(time, cFormat) {
   if (arguments.length === 0) {
     return null

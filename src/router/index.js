@@ -49,13 +49,13 @@ export const constantRouterMap = [
         path: 'table',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: '表格', icon: 'table' }
+        meta: { title: 'columns表格', icon: 'table' }
       },
       {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '树状结构', icon: 'tree' }
+        meta: { title: 'handle目录树', icon: 'tree' }
       },
       {
         path: 'form',
@@ -67,7 +67,7 @@ export const constantRouterMap = [
         path: 'code',
         name: 'Code',
         component: () => import('@/views/code/index'),
-        meta: { title: '代码编辑器', icon: 'code' }
+        meta: { title: 'code编辑器', icon: 'code' }
       }
     ]
   },

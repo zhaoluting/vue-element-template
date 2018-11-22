@@ -64,6 +64,18 @@ const globalMap = new Map([
       value: '9',
       name: '高'
     }
+  ]],
+  ['statusMap', [
+    {
+      value: 'published',
+      name: '成功'
+    }, {
+      value: 'draft',
+      name: '失败'
+    }, {
+      value: 'deleted',
+      name: '失效'
+    }
   ]]
 ])
 export default globalMap
