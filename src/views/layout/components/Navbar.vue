@@ -10,11 +10,11 @@
       <el-dropdown-menu slot="dropdown" class="user-dropdown">
         <router-link class="inlineBlock" to="/">
           <el-dropdown-item>
-            Home
+            首页
           </el-dropdown-item>
         </router-link>
         <el-dropdown-item divided>
-          <span style="display:block;" @click="logout">LogOut</span>
+          <span style="display:block;" @click="logout">退出</span>
         </el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
@@ -55,10 +55,12 @@ export default {
   height: 50px;
   line-height: 50px;
   border-radius: 0px !important;
+  z-index: 2000;
+  /* 新加 --start */
   position: fixed;
   top: 0;
-  width: 100%;
-  z-index: 2000;
+  width: calc(100% - 40px);
+  /* 新加 --end */
   .hamburger-container {
     line-height: 58px;
     height: 50px;
@@ -74,7 +76,8 @@ export default {
   .avatar-container {
     height: 50px;
     display: inline-block;
-    position: absolute;
+    position: fixed;
+    top: 0;
     right: 35px;
     .avatar-wrapper {
       cursor: pointer;

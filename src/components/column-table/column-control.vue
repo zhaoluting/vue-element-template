@@ -3,7 +3,7 @@
     <!-- 定制列 -->
     <el-popover :max-width="720" placement="right-start">
       <el-button slot="reference" class="opt-button" size="small">列定制</el-button>
-      <el-checkbox v-model="isCheckAll" class="column-checkAll-item" @change="changeAll">全选</el-checkbox>
+      <el-checkbox :indeterminate="isIndeterminate" v-model="isCheckAll" class="column-checkAll-item" @change="changeAll">全选</el-checkbox>
       <div class="column-dropdown-item">
         <el-checkbox
           v-for="(item, index) in allColumns"
@@ -37,7 +37,7 @@ export default {
       // 是否全部选中
       isCheckAll: false,
       // 是否不定选中
-      isIndeterminate: false
+      isIndeterminate: true
     }
   },
   methods: {
@@ -49,13 +49,24 @@ export default {
     changeColumnShow(check, index) {
       this.allColumns[index].isShow = check
       this.$emit('changeColumn', this.allColumns)
+      this.countHiddens(this.allColumns)
     },
     // 批量改变所有列的显示状态
     changeAll() {
+      this.isIndeterminate = false
       this.allColumns.forEach((item, index) => {
         this.allColumns[index].isShow = this.isCheckAll
       })
       this.$emit('changeColumn', this.allColumns)
+    },
+    countHiddens(allColumns) {
+      let count = 0
+      for (const index in allColumns) {
+        if (allColumns[index].isShow === true) count++
+      }
+      console.log(count)
+      this.isIndeterminate = (count > 0 && count < allColumns.length)
+      this.isCheckAll = (count === allColumns.length)
     }
   }
 }

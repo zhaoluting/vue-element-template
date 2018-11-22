@@ -70,7 +70,7 @@ export default {
           style: item.style || {},
           on: {
             input: value => {
-              console.log(value)
+              // console.log(value)
               this.formJson.model[item.formAttrs.prop] = value
               item.attribute.value = value
             }

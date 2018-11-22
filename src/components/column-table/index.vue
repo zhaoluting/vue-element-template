@@ -48,12 +48,11 @@ export default {
     // 从localstorage里拿出需要隐藏的列，初始化表格
     this.hiddenColumns = this.getHiddenColumn(this.tableName)
     this.hiddenColumn(this.hiddenColumns)
-    this.tableColumns = this.allColumns
+    this.tableColumns = deepClone(this.allColumns)
   },
   methods: {
     initRender(createElement) {
-      console.log('render', this.refresh, this.accountType)
-      if (this.$refs.columnControl) this.$refs.columnControl.setColumns(this.allColumns)
+      if (this.$refs.columnControl) this.$refs.columnControl.setColumns(this.tableColumns)
       return (
         <div>
           <column-control ref='columnControl'
@@ -86,7 +85,6 @@ export default {
     },
     // 重新绘制表格
     reLayout() {
-      console.log('reLayout')
       this.refresh = false
       this.$nextTick(() => {
         this.refresh = true
@@ -94,8 +92,7 @@ export default {
     },
     // 给定制列组件使用，同步改变显示的表格列，并改变localstorage中的值
     changeShowColumn(column) {
-      this.allColumns = deepClone(column)
-      this.tableColumns = this.allColumns
+      this.tableColumns = deepClone(column)
       this.changeLocalHiddenColumn(column, this.tableName)
       this.reLayout()
     },

@@ -28,7 +28,7 @@ export default {
     this.formtemplate = formJson
   },
   mounted() {
-    console.log(formJson)
+    // console.log(formJson)
   },
   methods: {
     getItem(item) {
