@@ -2,6 +2,8 @@
 
 > PC后台模板，加入了一些自己平时积累下来的通用且业务性不强的公共方法与组件。
 
+<iframe width="560" height="315" src="https://github.com/zhaoluting/vue-element-template-pc/blob/master/src/assets/404_images/404.png?raw=true" frameborder="0" allowfullscreen></iframe>
+
 ## 参考项目
 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
 
